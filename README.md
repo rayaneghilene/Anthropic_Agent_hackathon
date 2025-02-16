@@ -1,6 +1,6 @@
 # Anthropic_Agent_hackathon
 
-![Anthropic agent hackathon image](/Anthropic_Agent_hackathon/Images/image.png)
+![Anthropic agent hackathon image](https://github.com/rayaneghilene/Anthropic_Agent_hackathon/blob/main/Images/image.png)
 
 ## usage
 To clone the repository run: 
