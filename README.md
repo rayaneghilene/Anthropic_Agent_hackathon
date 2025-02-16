@@ -1,6 +1,10 @@
 # Anthropic_Agent_hackathon
+We use ollama to run the deepseek r1 qwen 7B model for master prompt generation. This includes understanding the user's level of experience and relevant informations (hobbies, interests) which can be useful when generating tailored responses. The Data colloected from the user us processed using the NUmind Nu Extract 0.5B NER model, to extract the relevant informations, and formatt it as a prompt to query the Deepseek model. The deepseek model returns a master prompt that us fed to the Claude AI Agent, which uses to the Brave API to perform searches ang generats a comprehensie studying guide with respect to the feynman method. 
 
 ![Anthropic agent hackathon image](https://github.com/rayaneghilene/Anthropic_Agent_hackathon/blob/main/Images/image.png)
+
+## Preview of the Agent
+https://github.com/rayaneghilene/Anthropic_Agent_hackathon/blob/main/Images/Preview.mov
 
 ## usage
 To clone the repository run: 
@@ -60,3 +64,13 @@ You can quickly test the API chat with the test_api.py script
 ```bash
 python test_api.py
 ```
+
+
+
+
+
+## Contributing
+We welcome contributions from the community to enhance work. If you have ideas for features, improvements, or bug fixes, please submit a pull request or open an issue on GitHub.
+
+## Contact
+Feel free to reach out about any questions/suggestions at rayane.ghilene@ensea.fr
