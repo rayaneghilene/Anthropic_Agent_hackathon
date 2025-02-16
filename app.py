@@ -67,21 +67,21 @@ tokenizer = AutoTokenizer.from_pretrained("numind/NuExtract-tiny", trust_remote_
 model.to(device)
 model.eval()
 
-folder_path= 'Anthropic_Agent_hackathon/PDF_Documents'
-@st.cache_resource
-def load_pdf():
-    # pdf_name ='Issues with Entailment-based Zero-shot Text Classification.pdf'
-    #loaders = [PyPDFLoader(pdf_name)]
-    pdf_files = glob(f"{folder_path}/*.pdf")
-    loaders = [PyPDFLoader(file_path) for file_path in pdf_files]
+# folder_path= 'Anthropic_Agent_hackathon/PDF_Documents'
+# @st.cache_resource
+# def load_pdf():
+#     # pdf_name ='Issues with Entailment-based Zero-shot Text Classification.pdf'
+#     #loaders = [PyPDFLoader(pdf_name)]
+#     pdf_files = glob(f"{folder_path}/*.pdf")
+#     loaders = [PyPDFLoader(file_path) for file_path in pdf_files]
 
-    index= VectorstoreIndexCreator(
-        embedding = HuggingFaceEmbeddings(model_name= 'all-MiniLM-L12-V2'),
-        text_splitter=RecursiveCharacterTextSplitter(chunk_size=100, chunk_overlap=0)
-    ).from_loaders(loaders)
-    return index
+#     index= VectorstoreIndexCreator(
+#         embedding = HuggingFaceEmbeddings(model_name= 'all-MiniLM-L12-V2'),
+#         text_splitter=RecursiveCharacterTextSplitter(chunk_size=100, chunk_overlap=0)
+#     ).from_loaders(loaders)
+#     return index
 
-index = load_pdf()
+# index = load_pdf()
 
 
 ### Chain
@@ -89,7 +89,7 @@ index = load_pdf()
 chain= RetrievalQA.from_chain_type(
     llm= ChatOllama(model="deepseek-r1:7b"),
     chain_type ='stuff',
-    retriever= index.vectorstore.as_retriever(),
+    # retriever= index.vectorstore.as_retriever(),
     # retriever= Chroma(client=client, collection_name=collection_name),
 
     input_key='question'

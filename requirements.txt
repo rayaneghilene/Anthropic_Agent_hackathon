@@ -1,3 +1,10 @@
 transformers
 sentence-transformers
 torch
+fastapi
+langchain
+ollama
+uvicorn
+langchain-community
+python-multipart
+langchain-huggingface
